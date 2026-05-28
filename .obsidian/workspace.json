@@ -4,17 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "49d56f72adce2933",
+        "id": "5a3d34a205a9f2cd",
         "type": "tabs",
         "children": [
           {
-            "id": "0f905b66baf472f9",
+            "id": "d2407fbf4824d684",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "canvas",
+              "state": {
+                "file": "wiki/how-paperclip-works.canvas",
+                "viewState": {
+                  "x": 1293.5382716004967,
+                  "y": 741.7330908684856,
+                  "zoom": -0.7470418862501781
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "how-paperclip-works"
             }
           }
         ]
@@ -176,8 +183,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "0f905b66baf472f9",
+  "active": "d2407fbf4824d684",
   "lastOpenFiles": [
+    "raw/transcripts-and-how-tos/top-level-summary.md",
+    "wiki/concepts/heartbeats.md",
+    "wiki/how-paperclip-works.canvas",
+    "wiki/concepts/setup-sop.md",
     "raw/transcripts-and-how-tos/Token Usage in Paperclip.md",
     "wiki/wiki-hot-cache.md",
     "wiki/sources/token-usage-in-paperclip.md",
@@ -200,10 +211,7 @@
     "wiki/concepts/multi-company-isolation.md",
     "wiki/concepts/installation-and-setup.md",
     "wiki/concepts/identity-and-access.md",
-    "wiki/concepts/heartbeats.md",
     "wiki/concepts/governance-and-approvals.md",
-    "wiki/concepts/goal-alignment.md",
-    "wiki/concepts/company-portability.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
