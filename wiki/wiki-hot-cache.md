@@ -75,6 +75,8 @@ Tasks ([[tasks-and-tickets]]) are atomically checked out (no double-work), execu
 
 ## Key commands
 
+For the full end-to-end runbook (install → company → hire → cost-safe config → go live), see [[setup-sop]].
+
 **Quickstart** (open source, self-hosted, no Paperclip account; → [[installation-and-setup]]):
 ```
 npx paperclipai onboard --yes                 # trusted local loopback (fastest first run)

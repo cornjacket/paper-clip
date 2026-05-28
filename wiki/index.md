@@ -49,6 +49,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 ### Agents, setup & positioning
 - [[bring-your-own-agent]] — adapters: any agent, any provider.
 - [[installation-and-setup]] — quickstart, requirements, deployment modes, telemetry.
+- [[setup-sop]] — step-by-step runbook to stand up a cost-safe deployment end to end.
 - [[positioning]] — what Paperclip is and is not; vs alternatives.
 - [[roadmap]] — shipped vs planned capabilities.
 - [[community-and-ecosystem]] — channels, maintainers, notable community builds.

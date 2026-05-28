@@ -34,3 +34,10 @@ Ollama), [[skills]] (defs cost tokens every run), [[org-chart-and-agents]] (per-
 [[community-and-ecosystem]] (creator "Fruit"), and [[installation-and-setup]] (embedded Postgres port
 54329). Updated [[index]], [[overview]] (open questions), and [[wiki-hot-cache]]. First source with
 concrete operating numbers (per-agent cost ~$2).
+
+## [2026-05-27] synth | Setup SOP authored
+Created [[setup-sop]] — a 9-step runbook (prereqs → install → bind mode → verify → company/goal →
+hire org chart → cost-safe config → approve & run → telemetry → prod/portability) synthesized from
+[[installation-and-setup]], [[cost-optimization]], [[identity-and-access]], and the operating model.
+Cross-linked from [[installation-and-setup]] and [[wiki-hot-cache]]; added to [[index]] under setup.
+Steps not fully covered by sources are marked "(gap)". No source content changed.

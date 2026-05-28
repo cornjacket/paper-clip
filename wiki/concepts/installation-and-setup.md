@@ -4,7 +4,7 @@ name: Installation & Setup
 tags: [setup, install, quickstart, deployment, config]
 ---
 
-How to install and run [[paperclip|Paperclip]]. Open source, self-hosted, no Paperclip account required.
+How to install and run [[paperclip|Paperclip]]. Open source, self-hosted, no Paperclip account required. For the full end-to-end runbook (install → company → hire → cost-safe config → go live), follow [[setup-sop]].
 
 ## Quickstart
 ```
