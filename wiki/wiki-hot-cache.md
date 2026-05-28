@@ -2,12 +2,12 @@
 type: hot-cache
 title: Wiki Hot Cache
 updated: 2026-05-27
-sources: [paperclip-readme, paperclip-github-discussions]
+sources: [paperclip-readme, paperclip-github-discussions, token-usage-in-paperclip]
 ---
 
 # Wiki Hot Cache — PaperClip AI
 
-A single-page synthesis of the entire wiki — load this first, then drill into linked pages for detail. Everything here traces to [[paperclip-readme]] and [[paperclip-github-discussions]]; see [[index]] for the full catalog and [[overview]] for the evolving thesis.
+A single-page synthesis of the entire wiki — load this first, then drill into linked pages for detail. Everything here traces to [[paperclip-readme]], [[paperclip-github-discussions]], and [[token-usage-in-paperclip]]; see [[index]] for the full catalog and [[overview]] for the evolving thesis.
 
 > **One-liner:** [[paperclip|Paperclip]] is an open-source control plane that turns a pile of AI agents into a *company* — "if [[openclaw|OpenClaw]] is an *employee*, Paperclip is the *company*." Node.js server + React UI, MIT licensed by Paperclip Labs, Inc.
 
@@ -52,7 +52,7 @@ Paperclip is a full control plane, not a wrapper. Twelve server-side systems coo
 | [[heartbeats]] | DB-backed wakeup queue (with coalescing) that runs agents — the execution engine. |
 | [[workspaces-and-runtime]] | Project + isolated execution workspaces (git worktrees, operator branches), dev servers, preview URLs. |
 | [[governance-and-approvals]] | Approval workflows, execution policies, pause/resume/terminate, revisioned config with rollback, budget hard-stops. |
-| [[budget-and-cost-control]] | Token/cost tracking by company/agent/project/goal/issue/provider/model; scoped budget policies with warnings + hard stops. |
+| [[budget-and-cost-control]] | Token/cost tracking by company/agent/project/goal/issue/provider/model; scoped budget policies with warnings + hard stops. ⚠️ Hard-stops don't fire under subscription billing (see pitfalls). Operator playbook: [[cost-optimization]]. |
 | [[routines-and-schedules]] | Recurring work via cron / webhook / API triggers; each run creates a tracked issue. |
 | [[plugins]] | Out-of-process extension system: capability-gated host services, job scheduling, tool exposure, UI contributions. |
 | [[secrets-and-storage]] | Instance + company secrets (encrypted local), object storage, attachments, work products. |
@@ -98,13 +98,24 @@ cd paperclip && pnpm install && pnpm dev       # API at http://localhost:3100, e
 PAPERCLIP_TELEMETRY_DISABLED=1   DO_NOT_TRACK=1   CI=true   # or telemetry.enabled: false in config
 ```
 
-## Common pitfalls & gotchas
+## Cost: the #1 real-world pain (levers + a bug)
 
-Derived from community signal ([[paperclip-github-discussions]]) — there is no formal error catalog in the wiki yet (data gap).
+Cost is the most-reported friction. A community "test hire" burned **757K tokens**; subscription users report blowing weekly limits. The five levers ([[cost-optimization]], [[token-usage-in-paperclip]]):
 
-- **Runaway token/cost burn.** A community "test hire" consumed **757K tokens**; runaway loops can burn hundreds of dollars before you notice. Mitigation: set scoped [[budget-and-cost-control|budgets]] with hard stops *before* running; community asks for token-reducing RTK defaults. This is the single most-reported pain point.
-- **OpenClaw integration issues** recur in Discussions — [[openclaw]] connects as an HTTP/webhook bot; onboarding goes through [[identity-and-access]].
-- **Deployment-mode confusion.** Default is trusted-local loopback (no auth); for anything reachable off-box use `--bind lan`/`--bind tailnet` (authenticated). → [[identity-and-access]]
+1. **Model** — adapter picks the model; not every agent needs Opus/Sonnet 4.6, or even Claude. → [[bring-your-own-agent]]
+2. **Cadence** — heartbeat interval in **seconds** (`5`=5s, `60`=1min, `360`=1hr); the biggest lever. Match to the job; some agents run manual-only. → [[heartbeats]]
+3. **Instructions/skills** — packaged as input tokens *every run* (~5K off the bat); don't assign unused [[skills]].
+4. **Budgets** — per-agent hard stop (but see bug below). → [[budget-and-cost-control]]
+5. **Measure** — tokens in (tiny, ~54 = "wake & run") vs out (the bulk) vs **cached (~10× cheaper)**.
+
+**⚠️ The $0-cost bug:** agents on a Claude **subscription** (Max plan via "claw local" passthrough, not the API) show cost as **$0**, so **budget hard-stops never trigger**. Workaround: prompt Paperclip to query its **embedded Postgres (port 54329)**, read `cost_events`, apply API pricing, and backfill inferred cost to the UI (demo showed ~$2/agent). → [[cost-optimization]]
+
+**Cheap-scan pattern:** run a small local Ollama model hourly for web scans → file; a premium agent reads it once daily.
+
+## Other gotchas
+
+- **OpenClaw integration issues** recur in Discussions — [[openclaw]] connects as an HTTP/webhook bot; onboarding via [[identity-and-access]].
+- **Deployment-mode confusion.** Default is trusted-local loopback (no auth); for off-box access use `--bind lan`/`--bind tailnet` (authenticated). → [[identity-and-access]]
 - **Coarse roles.** Only board users + agent keys today; richer roles (Admin/Operator/viewer) are a community request, not yet shipped.
 
 ## Status: shipped vs planned ([[roadmap]])
@@ -119,13 +130,13 @@ Discord, Twitter/X (@papercliping), GitHub Issues/Discussions, website paperclip
 ## Quick facts
 
 - **License:** MIT © 2026 Paperclip Labs, Inc.
-- **Stack:** Node.js server + React UI; embedded PostgreSQL auto-created (point at your own Postgres in prod, deploy e.g. Vercel).
+- **Stack:** Node.js server + React UI; embedded PostgreSQL auto-created (port `54329`; holds `cost_events` — point at your own Postgres in prod, deploy e.g. Vercel).
 - **API:** `http://localhost:3100`.
 - **Requirements:** Node.js 20+, pnpm 9.15+.
 
 ## Open questions / data gaps
 
-- Real day-to-day operating cost beyond README claims (the 757K-token test hire is the only concrete number).
+- Will Paperclip fix the **$0-cost bug** so budget hard-stops work under subscription billing? (Until then, Postgres backfill is the only way to see real spend.)
 - Maturity of the [[plugins|plugin]] system and what's actually in *awesome-paperclip*.
 - Status of planned **Memory/Knowledge** work.
 - How deployment/bind modes behave for solo vs team setups in practice.

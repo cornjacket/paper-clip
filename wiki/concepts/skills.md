@@ -12,4 +12,7 @@ Skills are loaded during [[heartbeats|heartbeat execution]] and are part of what
 ## Connections
 Lets any [[bring-your-own-agent|adapter agent]] pick up org-specific know-how on the fly.
 
-Parent: [[architecture]] · Source: [[paperclip-readme]]
+## Cost note
+Skill definitions and agent instruction files are packaged into the prompt as input **tokens on every run** (a creator cites ~5K tokens off the bat), so over-assigning skills directly raises cost. Give an agent only the skills it actually uses — even unused skill definitions are billed. See [[cost-optimization]] and [[token-usage-in-paperclip]].
+
+Parent: [[architecture]] · Source: [[paperclip-readme]], [[token-usage-in-paperclip]]

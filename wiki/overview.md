@@ -18,13 +18,15 @@ and let them work [[tasks-and-tickets|tickets]] driven by [[heartbeats]] — und
 distinguishing bet is orchestration, not agent-building: it is [[bring-your-own-agent|runtime-agnostic]]
 ("if [[openclaw|OpenClaw]] is an employee, Paperclip is the company") and explicitly *not* a chatbot,
 agent framework, or workflow builder ([[positioning]]). The whole system is a twelve-part
-[[architecture|control plane]]. Setup is self-hosted and fast ([[installation-and-setup]]).
+[[architecture|control plane]]. Setup is self-hosted and fast ([[installation-and-setup]]). The
+recurring real-world friction is **cost**: tokens add up fast, and the main levers are model choice,
+[[heartbeats|heartbeat cadence]], lean instructions/[[skills]], and budgets ([[cost-optimization]]).
 
 ## Open questions
-- What does day-to-day operation actually look like beyond the README claims (e.g. the real cost of a "test hire" — the community saw 757K tokens)?
 - How mature is the [[plugins|plugin]] system, and what's in *awesome-paperclip*?
 - What's the status of the planned **Memory / Knowledge** work ([[roadmap]])?
 - How do the deployment/bind modes ([[identity-and-access]]) behave in practice for a solo vs team setup?
+- Will Paperclip fix the [[cost-optimization|$0-cost bug]] so [[budget-and-cost-control|budget hard-stops]] work under subscription billing? Until then the Postgres-backfill workaround is the only way to see real spend.
 
 ## Next steps
 - Capture screenshots of the dashboard/UI into `raw/screenshots/` so pages can reference them.

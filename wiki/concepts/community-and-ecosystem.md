@@ -12,6 +12,7 @@ Where Paperclip's users, plugins, and maintainers congregate.
 
 ## People
 - `cryppadotta` — maintainer; seeded the pinned Plugin System discussion and the Evals and Memory threads.
+- **Fruit** — YouTube creator running ~15 agents 24/7; publishes Paperclip how-to videos (e.g. [[token-usage-in-paperclip|token/cost walkthrough]]) and sells a "vault" startup pack (~200 prompts).
 
 ## Notable community work
 - "Zero-Human Journalism Company built on Paperclip" (Show and tell).

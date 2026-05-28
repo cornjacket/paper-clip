@@ -12,7 +12,10 @@ tags: [adapters, agents, byo, integrations]
 ## Ecosystem
 Community adapters and providers include OpenCode + LiteLLM, DeepSeek, Gemma, a multi-account Codex router, and OpenClaw-likes such as "PicoClaw" ([[paperclip-github-discussions]]).
 
+## Adapter, model & billing
+An agent's **adapter selects which model it runs** ([[token-usage-in-paperclip]]). The **"claw local" adapter** passes through your authenticated Claude CLI session, so runs bill against your **subscription** (Max plan) rather than the Anthropic **API** — a primary draw of Paperclip ("not so with OpenClaw"), but the source of the [[budget-and-cost-control|$0-cost bug]]. You can also point adapters at small **local models** (e.g. an 8B Ollama model like Qwen) for cheap, frequent work — see the cheap-scan pattern in [[cost-optimization]]. Model and cadence are the top cost levers.
+
 ## Connections
 Adapters are invoked during [[heartbeats]]; sandbox/cloud agents (Cursor/e2b) are on the [[roadmap]].
 
-Parent: [[architecture]] · Source: [[paperclip-readme]], [[paperclip-github-discussions]]
+Parent: [[architecture]] · Source: [[paperclip-readme]], [[paperclip-github-discussions]], [[token-usage-in-paperclip]]

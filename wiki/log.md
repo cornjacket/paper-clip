@@ -23,3 +23,14 @@ model, org chart, the twelve-system control plane, execution lifecycle, key comm
 pitfalls (757K-token cost burn, OpenClaw integration, bind-mode confusion), shipped-vs-planned,
 community, quick facts, and open questions. Added to [[index]] under Overview. No source content
 changed; derived entirely from existing pages.
+
+## [2026-05-27] ingest | Token Usage in Paperclip (YouTube, Fruit)
+Ingested the `raw/transcripts-and-how-tos/` transcript on cost. Created source page
+[[token-usage-in-paperclip]] and new concept [[cost-optimization]] (five levers + the $0-subscription
+bug & Postgres-backfill workaround). Folded into [[budget-and-cost-control]] (flagged a contradiction:
+budget hard-stops don't fire under subscription billing), [[heartbeats]] (cadence in seconds; #1 cost
+lever), [[bring-your-own-agent]] (adapter selects model; "claw local" subscription passthrough; local
+Ollama), [[skills]] (defs cost tokens every run), [[org-chart-and-agents]] (per-agent tuning),
+[[community-and-ecosystem]] (creator "Fruit"), and [[installation-and-setup]] (embedded Postgres port
+54329). Updated [[index]], [[overview]] (open questions), and [[wiki-hot-cache]]. First source with
+concrete operating numbers (per-agent cost ~$2).

@@ -15,4 +15,7 @@ Agents resume the same [[tasks-and-tickets|task]] context across heartbeats inst
 ## Triggers
 By default agents run on scheduled heartbeats and event-based triggers (task assignment, @-mentions); continuous agents like [[openclaw|OpenClaw]] can also be hooked in. Recurring work is scheduled via [[routines-and-schedules]].
 
-Parent: [[architecture]] · Source: [[paperclip-readme]]
+## Cadence (configuration & cost)
+Each agent's heartbeat interval is configured in **seconds**: `5` = every 5 seconds, `60` = every minute, `360` = every hour ([[token-usage-in-paperclip]]). Agents can also be set to run only on **manual/trigger**, never on a timer. Cadence is the **single biggest cost lever** — 15 agents waking every 5 minutes on a frontier model burns budgets fast. Match cadence to the job. See [[cost-optimization]].
+
+Parent: [[architecture]] · Source: [[paperclip-readme]], [[token-usage-in-paperclip]]

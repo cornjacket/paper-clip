@@ -15,6 +15,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 ## Sources
 - [[paperclip-readme]] — clipped GitHub README: product overview + quickstart.
 - [[paperclip-github-discussions]] — clipped Discussions index: community + ecosystem signal.
+- [[token-usage-in-paperclip]] — YouTube transcript: cost levers, the $0-subscription bug, real per-agent costs.
 
 ## Entities
 - [[paperclip]] — the product: open-source orchestration for teams of AI agents (central hub).
@@ -38,6 +39,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 
 ### Cost, data & extensibility
 - [[budget-and-cost-control]] — token/cost tracking and scoped budget enforcement.
+- [[cost-optimization]] — operator playbook: the five cost levers + the $0-subscription bug & workaround.
 - [[secrets-and-storage]] — secrets, encrypted + object storage, attachments.
 - [[activity-and-events]] — durable audit log of actions and events.
 - [[company-portability]] — export/import whole organizations.

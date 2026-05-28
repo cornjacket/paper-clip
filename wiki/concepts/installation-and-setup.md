@@ -24,7 +24,7 @@ cd paperclip
 pnpm install
 pnpm dev
 ```
-Starts the API at `http://localhost:3100` with an auto-created embedded PostgreSQL. **Requirements:** Node.js 20+, pnpm 9.15+.
+Starts the API at `http://localhost:3100` with an auto-created embedded PostgreSQL (reachable on port `54329`, per [[token-usage-in-paperclip]] — useful for querying `cost_events` directly; see [[cost-optimization]]). **Requirements:** Node.js 20+, pnpm 9.15+.
 
 Dev scripts: `pnpm dev`, `dev:once`, `dev:server`, `build`, `typecheck`, `test` (Vitest), `test:watch`, `test:e2e` (Playwright), `db:generate`, `db:migrate`. `pnpm test` does not run Playwright.
 
