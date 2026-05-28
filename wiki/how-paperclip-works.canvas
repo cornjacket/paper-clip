@@ -1,0 +1,61 @@
+{
+	"nodes": [
+		{"id":"g_model","type":"group","label":"1 · The operating model","x":20,"y":0,"width":1460,"height":220,"color":"6"},
+		{"id":"g_org","type":"group","label":"2 · Org chart  ·  every agent has a boss, a title, a budget","x":0,"y":320,"width":520,"height":620,"color":"5"},
+		{"id":"g_beat","type":"group","label":"3 · Heartbeat execution  ·  what happens on each run","x":600,"y":320,"width":1320,"height":620,"color":"4"},
+		{"id":"g_cross","type":"group","label":"Cross-cutting  ·  governance · cost · data (wrap everything above)","x":0,"y":1020,"width":1900,"height":210,"color":"2"},
+
+		{"id":"intro","type":"text","x":40,"y":60,"width":440,"height":150,"color":"6","text":"## PaperClip AI\nIf [[openclaw|OpenClaw]] is an *employee*, **Paperclip is the company**.\n\nDefine goals → hire agents into an org chart → they work tickets on **heartbeats**, under budgets & governance you control."},
+		{"id":"step1","type":"text","x":540,"y":75,"width":250,"height":120,"color":"6","text":"**1 · Define the goal**\ne.g. \"#1 note app → $1M MRR\"\n\n→ [[goal-alignment]]"},
+		{"id":"step2","type":"text","x":830,"y":75,"width":250,"height":120,"color":"6","text":"**2 · Hire the team**\nCEO · CTO · engineers · marketers\nany bot, any provider\n\n→ [[org-chart-and-agents]]"},
+		{"id":"step3","type":"text","x":1130,"y":75,"width":330,"height":120,"color":"6","text":"**3 · Approve & run**\nset budgets, review strategy, monitor from the dashboard\n\n→ [[governance-and-approvals]]"},
+
+		{"id":"goal","type":"text","x":170,"y":380,"width":180,"height":70,"color":"5","text":"🎯 **Company goal**\n[[goal-alignment]]"},
+		{"id":"ceo","type":"text","x":170,"y":500,"width":180,"height":60,"text":"**CEO**"},
+		{"id":"cto","type":"text","x":60,"y":620,"width":180,"height":60,"text":"**CTO**"},
+		{"id":"mkt","type":"text","x":290,"y":620,"width":180,"height":60,"text":"Marketing / Design"},
+		{"id":"eng1","type":"text","x":30,"y":750,"width":180,"height":70,"text":"Engineer\nadapter + budget"},
+		{"id":"eng2","type":"text","x":250,"y":750,"width":180,"height":70,"text":"Engineer\nadapter + budget"},
+
+		{"id":"trig","type":"text","x":640,"y":380,"width":240,"height":90,"color":"4","text":"⏱ **Heartbeat fires**\nscheduled · event · @-mention\n[[heartbeats]]"},
+		{"id":"budget","type":"text","x":920,"y":380,"width":240,"height":90,"text":"**1 · Budget check**\noverspend → pause\n[[budget-and-cost-control]]"},
+		{"id":"ws","type":"text","x":1200,"y":380,"width":240,"height":90,"text":"**2 · Resolve workspace**\ngit worktree + context\n[[workspaces-and-runtime]]"},
+		{"id":"sec","type":"text","x":1480,"y":380,"width":240,"height":90,"text":"**3 · Inject secrets**\nscoped to this run\n[[secrets-and-storage]]"},
+		{"id":"skill","type":"text","x":1480,"y":520,"width":240,"height":90,"text":"**4 · Load skills**\nruntime injection\n[[skills]]"},
+		{"id":"adapter","type":"text","x":1200,"y":520,"width":240,"height":90,"text":"**5 · Invoke adapter**\nClaude · Codex · OpenClaw…\n[[bring-your-own-agent]]"},
+		{"id":"ticket","type":"text","x":920,"y":520,"width":240,"height":90,"text":"**Works the ticket**\natomic checkout\n[[tasks-and-tickets]]"},
+		{"id":"out","type":"text","x":920,"y":680,"width":520,"height":90,"color":"4","text":"📝 **Outputs** → logs · cost events · session state · audit\n[[activity-and-events]]"},
+
+		{"id":"gov","type":"text","x":60,"y":1080,"width":300,"height":110,"color":"2","text":"🛡 **Governance & approvals**\npause / resume / terminate · rollback\n[[governance-and-approvals]]"},
+		{"id":"cost","type":"text","x":420,"y":1080,"width":320,"height":110,"color":"1","text":"💸 **Budgets & cost**\n⚠ shows **$0** under subscription → budgets don't fire\n[[cost-optimization]]"},
+		{"id":"iso","type":"text","x":800,"y":1080,"width":300,"height":110,"color":"2","text":"🏢 **Multi-company isolation**\none deployment, many companies\n[[multi-company-isolation]]"},
+		{"id":"port","type":"text","x":1160,"y":1080,"width":300,"height":110,"color":"2","text":"📦 **Company portability**\nexport/import via companies.sh\n[[company-portability]]"},
+		{"id":"setup","type":"text","x":1520,"y":1080,"width":320,"height":110,"color":"4","text":"🚀 **Setup runbook**\nstep-by-step SOP\n[[setup-sop]]"}
+	],
+	"edges": [
+		{"id":"e1","fromNode":"intro","fromSide":"right","toNode":"step1","toSide":"left","toEnd":"arrow"},
+		{"id":"e2","fromNode":"step1","fromSide":"right","toNode":"step2","toSide":"left","toEnd":"arrow"},
+		{"id":"e3","fromNode":"step2","fromSide":"right","toNode":"step3","toSide":"left","toEnd":"arrow"},
+		{"id":"e4","fromNode":"step1","fromSide":"bottom","toNode":"goal","toSide":"top","toEnd":"arrow","label":"defines"},
+		{"id":"e5","fromNode":"step3","fromSide":"bottom","toNode":"trig","toSide":"top","toEnd":"arrow","label":"kicks off runs"},
+
+		{"id":"o1","fromNode":"goal","fromSide":"bottom","toNode":"ceo","toSide":"top","toEnd":"arrow"},
+		{"id":"o2","fromNode":"ceo","fromSide":"bottom","toNode":"cto","toSide":"top","toEnd":"arrow"},
+		{"id":"o3","fromNode":"ceo","fromSide":"bottom","toNode":"mkt","toSide":"top","toEnd":"arrow"},
+		{"id":"o4","fromNode":"cto","fromSide":"bottom","toNode":"eng1","toSide":"top","toEnd":"arrow"},
+		{"id":"o5","fromNode":"cto","fromSide":"bottom","toNode":"eng2","toSide":"top","toEnd":"arrow"},
+		{"id":"o6","fromNode":"eng2","fromSide":"right","toNode":"trig","toSide":"bottom","toEnd":"arrow","color":"5","label":"each agent wakes on a beat"},
+
+		{"id":"h1","fromNode":"trig","fromSide":"right","toNode":"budget","toSide":"left","toEnd":"arrow"},
+		{"id":"h2","fromNode":"budget","fromSide":"right","toNode":"ws","toSide":"left","toEnd":"arrow"},
+		{"id":"h3","fromNode":"ws","fromSide":"right","toNode":"sec","toSide":"left","toEnd":"arrow"},
+		{"id":"h4","fromNode":"sec","fromSide":"bottom","toNode":"skill","toSide":"top","toEnd":"arrow"},
+		{"id":"h5","fromNode":"skill","fromSide":"left","toNode":"adapter","toSide":"right","toEnd":"arrow"},
+		{"id":"h6","fromNode":"adapter","fromSide":"left","toNode":"ticket","toSide":"right","toEnd":"arrow"},
+		{"id":"h7","fromNode":"ticket","fromSide":"bottom","toNode":"out","toSide":"top","toEnd":"arrow"},
+		{"id":"h8","fromNode":"out","fromSide":"left","toNode":"trig","toSide":"bottom","toEnd":"arrow","color":"4","label":"persistent session · resume next beat"},
+
+		{"id":"c1","fromNode":"out","fromSide":"bottom","toNode":"cost","toSide":"top","toEnd":"arrow","color":"2","label":"cost events"},
+		{"id":"c2","fromNode":"out","fromSide":"bottom","toNode":"gov","toSide":"top","toEnd":"arrow","color":"2","label":"audit log"}
+	]
+}

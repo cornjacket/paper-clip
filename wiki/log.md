@@ -41,3 +41,10 @@ hire org chart → cost-safe config → approve & run → telemetry → prod/por
 [[installation-and-setup]], [[cost-optimization]], [[identity-and-access]], and the operating model.
 Cross-linked from [[installation-and-setup]] and [[wiki-hot-cache]]; added to [[index]] under setup.
 Steps not fully covered by sources are marked "(gap)". No source content changed.
+
+## [2026-05-27] synth | "How Paperclip works" canvas
+Created `wiki/how-paperclip-works.canvas` (Obsidian Canvas, 27 nodes / 21 edges) visualizing four
+bands: the 3-step operating model, the org-chart hierarchy, the heartbeat run lifecycle (trigger →
+budget → workspace → secrets → skills → adapter → ticket → outputs, with a resume loop), and the
+cross-cutting governance/cost/data systems. All cards carry clickable wikilinks to concept pages; the
+cost card flags the $0-subscription bug in red. Added to [[index]] under Overview.

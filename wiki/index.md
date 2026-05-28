@@ -11,6 +11,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 ## Overview
 - [[overview]] — top-level summary and evolving thesis.
 - [[wiki-hot-cache]] — single-page synthesis of the whole wiki; load this first.
+- `how-paperclip-works.canvas` — visual board: operating model, org chart, heartbeat run lifecycle, cross-cutting systems.
 
 ## Sources
 - [[paperclip-readme]] — clipped GitHub README: product overview + quickstart.
