@@ -16,3 +16,10 @@ pages ([[paperclip]], [[openclaw]]), and 21 concept pages covering the twelve-sy
 [[positioning]], [[roadmap]], [[community-and-ecosystem]]). Dense wikilinks added with [[paperclip]]
 and [[architecture]] as primary hubs. Updated [[index]] and [[overview]] (thesis + open questions).
 No screenshots present in `raw/screenshots/` yet — nothing to connect.
+
+## [2026-05-27] synth | Wiki hot cache created
+Synthesized every wiki page into [[wiki-hot-cache]] — a single load-first digest covering the mental
+model, org chart, the twelve-system control plane, execution lifecycle, key commands, common
+pitfalls (757K-token cost burn, OpenClaw integration, bind-mode confusion), shipped-vs-planned,
+community, quick facts, and open questions. Added to [[index]] under Overview. No source content
+changed; derived entirely from existing pages.
