@@ -4,24 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5a3d34a205a9f2cd",
+        "id": "f87bc0c01b65c3de",
         "type": "tabs",
         "children": [
           {
-            "id": "d2407fbf4824d684",
+            "id": "8468c6aa279ae439",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "wiki/how-paperclip-works.canvas",
-                "viewState": {
-                  "x": 1293.5382716004967,
-                  "y": 741.7330908684856,
-                  "zoom": -0.7470418862501781
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "how-paperclip-works"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -183,11 +176,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "d2407fbf4824d684",
+  "active": "8468c6aa279ae439",
   "lastOpenFiles": [
+    "wiki/index.md",
+    "wiki/how-paperclip-works.canvas",
+    "wiki/sources/top-level-summary.md",
+    "wiki/concepts/quality-assurance-loops.md",
+    "wiki/concepts/mcp-integration.md",
     "raw/transcripts-and-how-tos/top-level-summary.md",
     "wiki/concepts/heartbeats.md",
-    "wiki/how-paperclip-works.canvas",
     "wiki/concepts/setup-sop.md",
     "raw/transcripts-and-how-tos/Token Usage in Paperclip.md",
     "wiki/wiki-hot-cache.md",
@@ -208,10 +205,6 @@
     "wiki/concepts/positioning.md",
     "wiki/concepts/plugins.md",
     "wiki/concepts/org-chart-and-agents.md",
-    "wiki/concepts/multi-company-isolation.md",
-    "wiki/concepts/installation-and-setup.md",
-    "wiki/concepts/identity-and-access.md",
-    "wiki/concepts/governance-and-approvals.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
