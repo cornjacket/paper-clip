@@ -12,8 +12,10 @@ summarizing, cross-referencing, filing, and bookkeeping.
 
 ## Three layers
 
-1. **`raw/`** — immutable source documents (articles, papers, notes, images). Read from these;
-   **never modify them.** This is the source of truth.
+1. **`Clippings/` and `raw/`** — immutable source documents. Read from these; **never modify
+   them.** This is the source of truth. `Clippings/` holds web clips captured by the Obsidian Web
+   Clipper (Chrome) plugin; `raw/` holds every other kind of source (non-plugin clippings, papers,
+   transcripts, screenshots).
 2. **`wiki/`** — LLM-generated markdown. You own this layer entirely: create pages, update them
    when new sources arrive, maintain cross-references, keep it internally consistent.
 3. **`CLAUDE.md`** (this file) — the schema: conventions + workflows. Co-evolve it with the user
@@ -22,11 +24,12 @@ summarizing, cross-referencing, filing, and bookkeeping.
 ## Directory layout
 
 ```
+Clippings/                  web clips from the Obsidian Web Clipper (Chrome) plugin
 raw/
-  articles/   clipped web articles (markdown)
-  papers/     papers, reports, PDFs
-  notes/      your own notes, transcripts, podcast notes
-  assets/     downloaded images referenced by sources
+  clippings/                non-plugin clippings / other web sources (markdown)
+  papers/                   papers, reports, PDFs
+  transcripts-and-how-tos/  transcripts, how-tos, your own notes
+  screenshots/              downloaded images / screenshots referenced by sources
 wiki/
   index.md    content catalog — every page, one-line summary, by category
   log.md      append-only chronological log of ingests / queries / lints
@@ -52,8 +55,8 @@ Frontmatter templates:
 ---
 type: source
 title:
-source_path: raw/articles/...
-source_kind: article | paper | note | image
+source_path: Clippings/... | raw/...
+source_kind: clipping | paper | transcript | how-to | screenshot
 date_ingested: YYYY-MM-DD
 date_published:
 tags: []
@@ -81,8 +84,8 @@ tags: []
 
 ### Ingest
 When the user drops a source into `raw/` and asks you to process it:
-1. Read the source. If it references images in `raw/assets/`, read the text first, then view the
-   key images for extra context (LLMs can't read inline-image markdown in one pass).
+1. Read the source. If it references images (e.g. in `raw/screenshots/`), read the text first, then
+   view the key images for extra context (LLMs can't read inline-image markdown in one pass).
 2. Discuss key takeaways with the user (unless told to batch silently).
 3. Write or update a summary page in `wiki/sources/`.
 4. Update or create relevant `entities/` and `concepts/` pages — fold the new information in,
