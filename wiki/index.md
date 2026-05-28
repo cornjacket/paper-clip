@@ -48,6 +48,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 - [[company-portability]] — export/import whole organizations.
 - [[plugins]] — out-of-process extension system.
 - [[skills]] — runtime skill injection.
+- [[mcp-integration]] — first-party `@paperclipai/mcp-server`: ~40+ tools wrapping the REST API for any MCP client.
 
 ### Agents, setup & positioning
 - [[bring-your-own-agent]] — adapters: any agent, any provider.

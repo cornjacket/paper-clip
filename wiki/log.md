@@ -65,3 +65,6 @@ numbers (early-2026 launch, 38K+ stars/month one) — quarantined in [[mcp-integ
 [[community-and-ecosystem]], not asserted as fact. Updated [[index]], [[overview]] (open questions),
 and folded everything into [[wiki-hot-cache]] (new sources entry, positioning axis, checklist, QA-loop
 reliability note, and an "Unverified secondary-source claims" section).
+
+## [2026-05-28] verify | top-level-summary's flagged claims, against the repo
+Checked the three flagged claims from [[top-level-summary]] against [paperclipai/paperclip](https://github.com/paperclipai/paperclip) (gh API + web). **All resolved:** (1) the **MCP server is real and first-party** — `@paperclipai/mcp-server` at `packages/mcp-server`, a thin REST-API wrapper exposing ~40+ tools; rewrote [[mcp-integration]] from "unverified" to confirmed and cross-linked it from [[plugins]] and [[positioning]]. (2) The **"academic arXiv/OSF/OpenAlex variant" is a confirmed separate namesake** (`matsjfunke/paperclip`) — the conflation flag was correct. (3) **Traction directionally confirmed** — repo created 2026-03-02, 68,089 stars on 2026-05-28; "38K in month one" is consistent. Promoted the flagged sections in [[community-and-ecosystem]], [[wiki-hot-cache]] (now an "Integration surface: MCP server" section + traction in Quick facts), [[overview]] (open questions resolved), and [[index]]. No raw sources changed.

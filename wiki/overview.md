@@ -1,6 +1,6 @@
 ---
 type: overview
-updated: 2026-05-27
+updated: 2026-05-28
 ---
 
 # PaperClip AI — Overview
@@ -27,6 +27,8 @@ recurring real-world friction is **cost**: tokens add up fast, and the main leve
 - What's the status of the planned **Memory / Knowledge** work ([[roadmap]])?
 - How do the deployment/bind modes ([[identity-and-access]]) behave in practice for a solo vs team setup?
 - Will Paperclip fix the [[cost-optimization|$0-cost bug]] so [[budget-and-cost-control|budget hard-stops]] work under subscription billing? Until then the Postgres-backfill workaround is the only way to see real spend.
+
+_Resolved 2026-05-28 (verified against the repo): the [[mcp-integration|`@paperclipai/mcp-server`]] is real and first-party; the "academic arXiv variant" is a confirmed unrelated namesake; traction checks out (repo created 2026-03-02, 68K+ stars) ([[community-and-ecosystem]])._
 
 ## Next steps
 - Capture screenshots of the dashboard/UI into `raw/screenshots/` so pages can reference them.

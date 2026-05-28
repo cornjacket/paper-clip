@@ -141,6 +141,10 @@ Discord, Twitter/X (@papercliping), GitHub Issues/Discussions, website paperclip
 - **Stack:** Node.js server + React UI; embedded PostgreSQL auto-created (port `54329`; holds `cost_events` — point at your own Postgres in prod, deploy e.g. Vercel).
 - **API:** `http://localhost:3100`.
 - **Requirements:** Node.js 20+, pnpm 9.15+.
+- **Traction:** repo created 2026-03-02; **68K+ GitHub stars** by 2026-05-28 ([[community-and-ecosystem]]).
+
+## Integration surface: MCP server ([[mcp-integration]])
+Beyond [[plugins]], Paperclip ships a first-party **`@paperclipai/mcp-server`** (in-repo at `packages/mcp-server`) — a thin MCP wrapper over the REST API exposing ~40+ tools (Issues, Approvals, Goals, Agents, …) so any MCP client can drive a workspace by tool call. *Verified 2026-05-28.* Note a **separate namesake**, `matsjfunke/paperclip`, is an unrelated arXiv/OSF/OpenAlex research-paper MCP server — not this Paperclip.
 
 ## Open questions / data gaps
 
