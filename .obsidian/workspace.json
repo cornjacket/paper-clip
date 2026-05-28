@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0c4ca4ae007bacc4",
+        "id": "49d56f72adce2933",
         "type": "tabs",
         "children": [
           {
-            "id": "453748919b767a30",
+            "id": "0f905b66baf472f9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/transcripts-and-how-tos/Token Usage in Paperclip.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Token Usage in Paperclip"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -180,10 +176,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "437757636e8ccfa5",
+  "active": "0f905b66baf472f9",
   "lastOpenFiles": [
-    "wiki/entities/paperclip.md",
     "raw/transcripts-and-how-tos/Token Usage in Paperclip.md",
+    "wiki/wiki-hot-cache.md",
+    "wiki/sources/token-usage-in-paperclip.md",
+    "wiki/concepts/cost-optimization.md",
+    "wiki/entities/paperclip.md",
     "wiki/concepts/architecture.md",
     "Clippings/paperclipaipaperclip The open-source app everyone uses to manage agents at work 1.md",
     "wiki/sources/paperclip-readme.md",
@@ -205,9 +204,6 @@
     "wiki/concepts/governance-and-approvals.md",
     "wiki/concepts/goal-alignment.md",
     "wiki/concepts/company-portability.md",
-    "wiki/concepts/community-and-ecosystem.md",
-    "wiki/concepts/budget-and-cost-control.md",
-    "wiki/concepts/bring-your-own-agent.md",
     "wiki/sources",
     "wiki/entities",
     "wiki/concepts",
