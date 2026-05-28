@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-05-27
+updated: 2026-05-28
 ---
 
 # Index
@@ -17,6 +17,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 - [[paperclip-readme]] — clipped GitHub README: product overview + quickstart.
 - [[paperclip-github-discussions]] — clipped Discussions index: community + ecosystem signal.
 - [[token-usage-in-paperclip]] — YouTube transcript: cost levers, the $0-subscription bug, real per-agent costs.
+- [[top-level-summary]] — secondary explainer: orchestration-runtime framing, vs agent libraries; its MCP/traction claims were verified against the repo.
 
 ## Entities
 - [[paperclip]] — the product: open-source orchestration for teams of AI agents (central hub).
@@ -35,6 +36,7 @@ one-line summary, and updated on every ingest. See [[overview]] for the big pict
 - [[org-chart-and-agents]] — roles, titles, reporting lines, budgets, adapters.
 - [[goal-alignment]] — every task traces back to the company mission.
 - [[governance-and-approvals]] — approvals, policies, rollback, audit.
+- [[quality-assurance-loops]] — reviewer hierarchies that fight compounding error in long agent chains.
 - [[identity-and-access]] — auth, deployment modes, users, agent keys.
 - [[multi-company-isolation]] — many companies per deployment, fully isolated.
 

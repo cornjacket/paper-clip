@@ -12,6 +12,6 @@ Nothing ships without sign-off: Paperclip provides board approval workflows, exe
 - Full audit logging via [[activity-and-events]].
 
 ## Connections
-Governs [[org-chart-and-agents|agents]] and their [[tasks-and-tickets|work]], scoped by [[identity-and-access]]. Approvals also gate hires and supervise [[routines-and-schedules]].
+Governs [[org-chart-and-agents|agents]] and their [[tasks-and-tickets|work]], scoped by [[identity-and-access]]. Approvals also gate hires and supervise [[routines-and-schedules]]. The same review/approval stages power reviewer hierarchies that fight compounding error — see [[quality-assurance-loops]].
 
 Parent: [[architecture]] · Source: [[paperclip-readme]]

@@ -8,7 +8,7 @@ tags: [paperclip, orchestration, agents]
 Paperclip is an open-source app for managing teams of AI agents at work — "if [[openclaw|OpenClaw]] is an *employee*, Paperclip is the *company*." Built by Paperclip Labs, Inc. (MIT licensed).
 
 ## What it is
-A Node.js server with a React UI that orchestrates a team of AI agents to run a business. You bring your own agents, assign goals, and track work and costs from one dashboard. It looks like a task manager; under the hood it models org charts, budgets, governance, [[goal-alignment|goal alignment]], and agent coordination.
+A Node.js server with a React UI that orchestrates a team of AI agents to run a business — a **multi-agent orchestration runtime** ([[top-level-summary]]), as opposed to a single-assistant chat or a code-driven agent library ([[positioning]]). You bring your own agents, assign goals, and track work and costs from one dashboard. It looks like a task manager; under the hood it models org charts, budgets, governance, [[goal-alignment|goal alignment]], and agent coordination.
 
 ## The model
 1. **Define the goal** — e.g. "Build the #1 AI note-taking app to $1M MRR." See [[goal-alignment]].

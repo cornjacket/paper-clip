@@ -1,13 +1,13 @@
 ---
 type: hot-cache
 title: Wiki Hot Cache
-updated: 2026-05-27
-sources: [paperclip-readme, paperclip-github-discussions, token-usage-in-paperclip]
+updated: 2026-05-28
+sources: [paperclip-readme, paperclip-github-discussions, token-usage-in-paperclip, top-level-summary]
 ---
 
 # Wiki Hot Cache — PaperClip AI
 
-A single-page synthesis of the entire wiki — load this first, then drill into linked pages for detail. Everything here traces to [[paperclip-readme]], [[paperclip-github-discussions]], and [[token-usage-in-paperclip]]; see [[index]] for the full catalog and [[overview]] for the evolving thesis.
+A single-page synthesis of the entire wiki — load this first, then drill into linked pages for detail. Everything here traces to [[paperclip-readme]], [[paperclip-github-discussions]], and [[token-usage-in-paperclip]] (primary sources) plus [[top-level-summary]] (a *secondary* explainer — its uncorroborated claims are flagged ⚠️ below); see [[index]] for the full catalog and [[overview]] for the evolving thesis.
 
 > **One-liner:** [[paperclip|Paperclip]] is an open-source control plane that turns a pile of AI agents into a *company* — "if [[openclaw|OpenClaw]] is an *employee*, Paperclip is the *company*." Node.js server + React UI, MIT licensed by Paperclip Labs, Inc.
 
@@ -21,6 +21,8 @@ Paperclip orchestrates agents; it does not build them. You bring your own agents
 3. **Approve and run** — review strategy, set budgets, monitor from the dashboard. → [[governance-and-approvals]], [[budget-and-cost-control]]
 
 **What it is *not*** ([[positioning]]): not a chatbot, not an agent framework, not a workflow builder, not a prompt manager, not a single-agent tool, not a code-review tool. Tagline: "manage business goals, not pull requests." For teams (one agent doesn't need it, twenty do).
+
+**vs the alternatives:** a single assistant (ChatGPT/Claude) is task-by-task and human-coordinated; agent libraries (LangChain/AutoGen/CrewAI) are code-driven Python with custom state. Paperclip is a **UI-driven runtime** with autonomous CEO/lead delegation and built-in persistent state — your persona is "the Board" (review & direct), not a Python author ([[top-level-summary]]).
 
 ## Org chart & agents
 
@@ -63,13 +65,17 @@ Paperclip is a full control plane, not a wrapper. Twelve server-side systems coo
 
 ## How the pieces connect (execution lifecycle)
 
-A [[heartbeats|heartbeat]] is the spine that ties the systems together. On each wake, a run:
+A [[heartbeats|heartbeat]] is the spine that ties the systems together. It exists to fix agent **statelessness** — left alone an agent wakes with capability but no memory of its goals or identity, so each wake re-establishes context ([[top-level-summary]]). On each wake, a run (system view):
 1. **Budget check** ([[budget-and-cost-control]]) — overspend pauses the agent and cancels queued work.
 2. **Workspace resolution** ([[workspaces-and-runtime]]) — right directory, right context.
 3. **Secret injection** ([[secrets-and-storage]]) — only what the scoped run needs.
 4. **Skill loading** ([[skills]]) — picks up org-specific workflows at runtime.
 5. **Adapter invocation** ([[bring-your-own-agent]]) — the actual agent runs.
 6. **Outputs** — structured logs, cost events, session state, audit trails ([[activity-and-events]]).
+
+From the *agent's* perspective the same run is a checklist: **identity fetch → context retrieval → action/execution → memory extraction** ([[heartbeats]]).
+
+**Reliability:** long chains compound error (10 steps × 95% ≈ 60% end-to-end), so reviewer hierarchies (e.g. Engineer → QA loop) reset error before work surfaces — see [[quality-assurance-loops]], built on [[governance-and-approvals]].
 
 Tasks ([[tasks-and-tickets]]) are atomically checked out (no double-work), executed across heartbeats with **persistent session state** (resume context, don't restart), reviewed under [[governance-and-approvals]], metered by [[budget-and-cost-control]], and can be generated automatically by [[routines-and-schedules]]. Everything is company-scoped for [[multi-company-isolation]] and portable via [[company-portability]]. "Atomic execution" = atomic checkout + budget enforcement together.
 

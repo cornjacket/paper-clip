@@ -48,3 +48,20 @@ bands: the 3-step operating model, the org-chart hierarchy, the heartbeat run li
 budget → workspace → secrets → skills → adapter → ticket → outputs, with a resume loop), and the
 cross-cutting governance/cost/data systems. All cards carry clickable wikilinks to concept pages; the
 cost card flags the $0-subscription bug in red. Added to [[index]] under Overview.
+
+## [2026-05-28] ingest | What is Paperclip in AI? (top-level summary)
+Ingested `raw/transcripts-and-how-tos/top-level-summary.md` — a **secondary** explainer (reads as
+AI-generated), so claims were sorted into corroborated vs unverified. Created source page
+[[top-level-summary]] and two concept pages: [[quality-assurance-loops]] (compounding-error framing,
+10×95% ≈ 60%, Engineer→QA reviewer loops) and [[mcp-integration]] (⚠️ **unverified**). Folded
+corroborated material into [[heartbeats]] (statelessness "amnesia" rationale + agent's-eye checklist:
+identity→context→action→memory), [[positioning]] (new axis + table vs LangChain/AutoGen/CrewAI —
+UI-driven runtime vs code-driven libraries), [[bring-your-own-agent]] (OpenRouter; orchestration-layer
+vs action-layer framing), [[goal-alignment]] (top-down goal decomposition by CEO), [[paperclip]]
+(multi-agent orchestration *runtime*), and [[governance-and-approvals]] (link to QA loops). **Flagged
+unverified/likely-conflated:** a `paperclip-mcp` MCP server (Cursor/Windsurf/Claude Desktop), an
+"academic variant" bridging arXiv/OpenAlex/OSF (almost certainly an unrelated namesake), and traction
+numbers (early-2026 launch, 38K+ stars/month one) — quarantined in [[mcp-integration]] and
+[[community-and-ecosystem]], not asserted as fact. Updated [[index]], [[overview]] (open questions),
+and folded everything into [[wiki-hot-cache]] (new sources entry, positioning axis, checklist, QA-loop
+reliability note, and an "Unverified secondary-source claims" section).

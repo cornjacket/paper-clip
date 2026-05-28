@@ -7,7 +7,12 @@ tags: [adapters, agents, byo, integrations]
 "If it can receive a heartbeat, it's hired." Paperclip is runtime-agnostic: any agent, any provider, one [[org-chart-and-agents|org chart]].
 
 ## Supported runtimes
-[[openclaw|OpenClaw]], Claude Code, Codex, Cursor, Bash, and HTTP/webhook bots — plus external adapter plugins. Agents bring their own prompts, models, and runtimes ([[positioning]]).
+[[openclaw|OpenClaw]], Claude Code, Codex (OpenAI), OpenCode, Cursor, Bash, and HTTP/webhook bots — plus any model via **OpenRouter** and external adapter plugins. Agents bring their own prompts, models, and runtimes ([[positioning]]).
+
+## Two layers: orchestration vs action
+Paperclip is the **infrastructure / middleware layer**, not the LLM logic itself ([[top-level-summary]]):
+- **Orchestration layer (Paperclip):** routes tasks, tracks token budgets, holds state.
+- **Action layer (the connected agent, e.g. Claude Code):** runs terminal commands, edits files, executes scripts.
 
 ## Ecosystem
 Community adapters and providers include OpenCode + LiteLLM, DeepSeek, Gemma, a multi-account Codex router, and OpenClaw-likes such as "PicoClaw" ([[paperclip-github-discussions]]).
